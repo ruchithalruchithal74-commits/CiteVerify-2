@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-obsidian: #101414;
+  --color-sidebar: #14201C;
+  --color-card: #1C2623;
+  --color-emerald-primary: #19B887;
+  --color-gold: #D6B875;
+  --color-ivory: #F4F1E8;
+  --color-sage: #A3B5A9;
+
+  --color-verdict-supported: #22C58B;
+  --color-verdict-partial: #E9AC45;
+  --color-verdict-unsupported: #F07867;
+  --color-verdict-contradictory: #E05265;
+  --color-verdict-outdated: #A78BFA;
+  --color-verdict-review: #56B4D3;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #101414;
+    color: #F4F1E8;
+    scroll-behavior: smooth;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle custom scrollbar matching Obsidian + Emerald palette */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #101414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #25332E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334840;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
